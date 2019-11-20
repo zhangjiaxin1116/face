@@ -1,0 +1,25 @@
+*{
+        padding:0px;
+        margin:0px;
+        font-size:13px;
+        font-family:'微软雅黑';
+
+}
+
+li{
+        list-style:none;
+}
+a{
+        text-decoration:none;
+        color: #000;
+}
+a:hover{
+        text-decoration:none;
+}
+a:focus{
+        text-decoration:none;
+}
+button{
+        outline:  none;
+        border: none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>基于人脸识别的学生信息管理系统</title>
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/init.css">
+        <link rel="stylesheet" href="../css/login.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/login.js"></script>
+</head>
+<body>
+
+        <div class="content">
+                <div class="wrap">
+                        <div>
+
+                        </div>
+                        <div class="login">
+                                <div class="modal-dialog" style="width:400px; height:600px; opacity:0.8" >
+                                       <div class="modal-content">
+                                           <div class="modal-header">
+                                                       <h4 class="modal-title text-center" id="myModalLabel">登录</h4>
+                                           </div>
+                                             <form  id="form">
+                                                   <div class="modal-body" id = "model-body">
+
+                                                                <span class="user_focus" id="span1"></span>
+                                                               <div class="form-group   has-feedback">
+                                                                        <input type="text" class="form-control" id="username" placeholder="用户名">
+                                                                </div>
+
+                                                               <div class="form-group"  >
+                                                                         <input    id="password" type="password" class="form-control" placeholder="密码" autocomplete="off" name="password">
+                                                                 </div>
+
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                               <div class="form-group">
+                                                                         <button type="button"    onclick = "return checkForm()"  class="btn btn-primary form-control" id="submit" >登录</button>
+                                                               </div>
+                                                   </div>
+
+                                           </form>
+                                       </div><!-- /.modal-content -->
+                                   </div><!-- /.modal -->
+                        </div> <!--login-->
+                </div>   <!--wrap-->
+        </div> <!--content-->
+
+</body>
+</html>

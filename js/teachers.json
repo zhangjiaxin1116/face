@@ -1,0 +1,57 @@
+{
+         "data":[
+                        {
+                                "teacherId":"teacher001",
+                                "name":"李志伟",
+                                "sex":"男",
+                                "department":"大数据基础教研室",
+                                "labName":"信息技术创新实验室",
+                                "identity":"教师"
+
+                        },
+                        {
+                                "teacherId":"teacher002",
+                                "name":"蔡金胜",
+                                "sex":"男",
+                                "department":"信息工程学院",
+                                "labName":"机器人技术创新实验室",
+                                "identity":"讲师"
+                        },
+                        {
+                                "teacherId":"teacher003",
+                                "name":"吴德宇",
+                                "sex":"男",
+                                "department":"大数据基础教研室",
+                                "labName":"3D打印创新实验室",
+                                "identity":"教师"
+                        },
+                        {
+                                 "teacherId":"teacher004",
+                                 "name":"教师4",
+                                 "sex":"女",
+                                 "department":"大数据基础教研室",
+                                 "labName":"3D打印创新实验室",
+                                 "identity":"教师"
+                        },
+                        {
+                                 "teacherId":"teacher005",
+                                 "name":"教师5",
+                                 "sex":"男",
+                                 "department":"机器人技术创新实验室",
+                                 "labName":"3D打印创新实验室",
+                                 "identity":"教师"
+                       },
+                       {
+                               "teacherId":"teacher006",
+                               "name":"教师6",
+                               "sex":"男",
+                               "department":"大数据基础教研室",
+                               "labName":"车辆工程创新实验室",
+                               "identity":"教师"
+                       }
+
+
+                ],
+        "message":"success"
+
+}

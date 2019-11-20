@@ -1,0 +1,63 @@
+{
+         "data":[
+                        {
+                                "labId":"1",
+                                "name":"信息技术创新实验室",
+                                "address":"科教中心214",
+                                "director":"teacher1",
+                                "department":"信息工程学院",
+                                "state":"开放",
+                                "max":"50",
+                                "current":"3"
+                        },
+                        {
+                                "labId":"2",
+                                "name":"机器人技术创新实验室",
+                                "address":"科教中心215",
+                                "director":"teacher2",
+                                "department":"机械工程学院",
+                                "state":"开放",
+                                "max":"50",
+                                "current":"3"
+                        },
+                        {
+                                "labId":"3",
+                                "name":"3D打印创新实验室",
+                                "address":"男",
+                                "director":"teacher3",
+                                "department":"信息工程学院",
+                                "address":"科教中心216",
+                                "state":"关闭",
+                                "max":"50",
+                                "current":"3"
+                        },
+                        {
+                                "labId":"4",
+                                "name":"车辆工程创新实验室",
+                                "address":"科教中心217",
+                                "director":"teacher4",
+                                "department":"车辆工程学院",
+                                "state":"开放",
+                                "max":"50",
+                                "current":"3"
+                        }
+
+                ],
+        "message":"success",
+        "teacherName":["teacher1","teacher2","teacher3","teacher4"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

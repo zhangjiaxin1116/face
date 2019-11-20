@@ -1,0 +1,41 @@
+.content{
+        position: relative;
+        height: 820px;
+        overflow: hidden;
+        background:url('../img/logo_bg.jpg') no-repeat;
+        background-size: 100%,820px;
+}
+video,canvas {
+    position: absolute;
+    left:-80px;
+
+}
+.div1 {
+    width: 400px;
+    height: 400px;
+    float: left;
+    display: none;
+}
+.div2{
+
+     position:absolute;
+     right:10%;
+     top:10%;
+     background:#fff;
+     width:480px;
+     height:480px;
+     border-radius: 50%;
+     overflow: hidden;
+     border:1px solid #000;
+}
+.boxs{
+        position: relative;
+        width: 600px;
+        height: 1000px;
+        float: right;
+        margin-right: 30%;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        text-align: center;
+
+}

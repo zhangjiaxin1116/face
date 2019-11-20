@@ -1,0 +1,71 @@
+/* header */
+body{
+        background:url('../img/logo_bg.jpg') no-repeat;
+        background-size:100%  960px;
+}
+.top{
+
+        height: 5px;
+        background: #eee;
+}
+.header{
+        margin:0px auto 0px auto ;
+        height:80px;
+        width:90%;
+        box-shadow: 1px 1px 1px #dddddd;
+        border-radius: 5px 5px 5px 5px;
+        border-bottom: 1px solid #eee;
+        background: #fff;
+
+}
+.header .header_logo{
+        float: left;
+        margin-left: -10px;
+}
+.header .wrap{
+
+        width:960px;
+        margin-left:300px;
+}
+
+
+
+/* content */
+.content{
+        overflow: hidden;
+
+}
+.content .wrap{
+        width: 100%;
+        height:800px;
+}
+.content .wrap .login{
+        width:800px;
+        /* border: 1px solid #000; */
+
+        height: 700px;
+        padding-top: 30px;
+        margin: 100px auto 0;
+
+}
+/* 表单验证 */
+.content .wrap .login .user_focus,.content .wrap .login .psd_focus{
+        color:red;
+        padding-left: 3px;
+        height: 20px;
+        display: block;
+        margin-bottom: 5px;
+}
+/* footer */
+.footer{
+        opacity: 0.8;
+        background:#eee url('../img/底纹3.png');
+        width:100%;
+        height:180px;
+}
+
+
+
+
+
+/*   aad */

@@ -1,0 +1,170 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>人脸识别系统</title>
+    <script src="js/tracking-min.js"></script>
+    <script src="js/face-min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+</head>
+<style>
+    video, canvas {
+        position: absolute;
+        left:-80px;
+
+    }
+    .div1 {
+        width: 400px;
+        height: 400px;
+        float: left;
+        display: none;
+    }
+    .div2{
+        float: left;
+        position:absolute;
+        top:10%;
+        left:35%;
+        background:red;
+        width:480px;
+        height:480px;
+        border-radius: 50%;
+        overflow: hidden;
+        border:1px solid #000;
+    }
+
+</style>
+<body>
+
+    <div class="box">
+        <div class="div1" id="div1">
+                <table>
+                    <tr >
+                        <td>姓名</td>
+                        <td id="td1"></td>
+                    </tr>
+                    <tr>
+                        <td>相似度</td>
+                        <td id="td2"></td>
+                    </tr>
+                    <tr>
+                        <td>性别</td>
+                        <td id="td3"></td>
+                    </tr>
+                    <tr>
+                        <td>年级</td>
+                        <td id="td4"></td>
+                    </tr>
+                    <tr>
+                        <td>院系</td>
+                        <td id="td5"></td>
+                    </tr>
+                    <tr>
+                        <td>专业</td>
+                        <td id="td6"></td>
+                    </tr>
+                    <tr>
+                        <td>实验室</td>
+                        <td id="td7"></td>
+                    </tr>
+                </table>
+        </div>
+        <div class="div2">
+            <video id='video' width='640' height='480' preload autoplay loop muted></video>
+            <canvas id='canvas'></canvas>
+        </div>
+
+    </div>
+
+
+<script>
+    let flag = true;
+    let video = document.getElementById('video');
+    let img = document.getElementById('img');
+    let canvas = document.getElementById('canvas');
+    let context = canvas.getContext('2d');
+    let tracker = new tracking.ObjectTracker('face');
+    let x;
+    let y;
+    let width;
+    let height;
+    tracker.setInitialScale(4);
+    tracker.setStepSize(2);
+    tracker.setEdgesDensity(0.1);
+    tracking.track('#video', tracker, { camera: true });
+    tracker.on('track', function(event) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (event.data.length === 0) {
+            console.log("没有人脸")
+        }
+        else
+        {
+            console.log("正在匹配");
+            event.data.forEach(function(rect) {
+                // context.strokeStyle = '#f00';
+                // context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                // context.font = '11px Helvetica';
+                // context.fillStyle = "#f00";
+                x = rect.x;
+                y = rect.y;
+                width = rect.width;
+                height = rect.height;
+            });
+
+            if(flag){
+                // takePhoto();
+                flag=false;
+                setTimeout(function(){flag=true;},100);
+            }
+        }
+    });
+    function takePhoto() {
+        context.drawImage(video,x , y, width, height , 0 , 0, width, height);
+        let base64File = canvas.toDataURL();
+        let formData = new FormData();
+        formData.append("file", base64File);
+        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+        $.ajax({
+            type: "post",
+            url: "/faceSearch",
+            data: formData,
+            contentType: false,
+            processData: false,
+            async: true,
+            success: function (text) {
+                let timer = null;
+                clearInterval(timer);
+                if (text.message === "success") {
+                    let td = document.getElementById('td1');
+                    let div1 = document.getElementById('div1');
+                    td.innerHTML =text.data.name;
+                    td = document.getElementById('td2');
+                    td.innerHTML =text.data.similarity + "%";
+                    td = document.getElementById('td3');
+                    td.innerHTML =text.data.sex;
+                    td = document.getElementById('td4');
+                    td.innerHTML =text.data.grade;
+                    td = document.getElementById('td5');
+                    td.innerHTML =text.data.department;
+                    td = document.getElementById('td6');
+                    td.innerHTML =text.data.major;
+                    td = document.getElementById('td7');
+                    td.innerHTML =text.data.labName;
+
+                    div1.style.display = 'block';
+                    timer = setTimeout(function(){
+                        div1.style.display = 'none';
+                    },1000);
+                } else {
+                    // alert(res)
+                }
+            },
+            error: function (error) {
+                alert(JSON.stringify(error))
+            }
+        });
+    }
+</script>
+</body>
+</html>
